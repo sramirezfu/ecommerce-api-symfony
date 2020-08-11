@@ -1,0 +1,34 @@
+{# templates/emails/registration.html.twig #}
+
+<style>
+        .container{
+            width: 100%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .bg-gree{
+            background-color: #eee;
+        }
+        .bg-white{
+            background-color: #ffffff;
+        }
+</style>
+<div class="bg-gree">
+    <div class="bg-white">
+        <div>
+            <img src="{{ absolute_url(asset('public/images/page/logoBeuty.png')) }}" class="" alt="Logo Beuty">
+        </div>
+        <h3>You did it! You registered!</h3>
+
+        Hi! You're successfully registered.
+
+        {# example, assuming you have a route named "login" #}
+        To login, go to: <a href="{{ url('login') }}">...</a>.
+
+        Thanks!
+
+
+        {# Makes an absolute URL to the /images/logo.png file #}
+        <img src="public/images/product/1594598927frontend.jpg">
+    </div>
+<div>

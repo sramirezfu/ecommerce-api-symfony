@@ -1,0 +1,137 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# Rutas del controlador usuario.
+
+register:
+   path: /api/register
+   controller: App\Controller\UserController::register
+
+login:
+   path: /api/login
+   controller: App\Controller\UserController::login
+
+update:
+   path: /api/update
+   controller: App\Controller\UserController::update
+
+getUser:
+   path: /api/user/{id}
+   controller: App\Controller\UserController::getUsers
+
+upload:
+   path: /api/upload
+   controller: App\Controller\UserController::upload
+
+getImages:
+   path: /api/image/{file}
+   controller: App\Controller\UserController::getImages
+
+
+# Rutas del controlador category.
+
+createCategory:
+   path: /api/create/category
+   controller: App\Controller\CategoryController::create
+
+updateCategory:
+   path: /api/update/category/{id}
+   controller: App\Controller\CategoryController::update
+
+deleteCategory:
+   path: /api/delete/category/{id}
+   controller: App\Controller\CategoryController::destroy
+
+getCategory:
+   path: /api/get/category/{id}
+   controller: App\Controller\CategoryController::getCategory
+
+getCategories:
+   path: /api/get/categories
+   controller: App\Controller\CategoryController::getCategories
+
+
+# Rutas del controlador post.
+
+createPost:
+   path: /api/create/post
+   controller: App\Controller\PostController::create
+
+updatePost:
+   path: /api/update/post/{id}
+   controller: App\Controller\PostController::update
+
+deletePost:
+   path: /api/delete/post/{id}
+   controller: App\Controller\PostController::destroy
+
+getPost:
+   path: /api/get/post/{id}
+   controller: App\Controller\PostController::getPost
+
+getPosts:
+   path: /api/get/posts
+   controller: App\Controller\PostController::getPosts
+
+getPostsByCategory:
+   path: /api/category/posts/{id}
+   controller: App\Controller\PostController::getPostsByCategory
+
+getPostsByUser:
+   path: /api/user/posts/{id}
+   controller: App\Controller\PostController::getPostsByUser
+
+
+# Rutas del controlador product.
+
+createProduct:
+   path: /api/create/product
+   controller: App\Controller\ProductController::create
+
+updateProduct:
+   path: /api/update/product/{id}
+   controller: App\Controller\ProductController::update
+
+deleteProduct:
+   path: /api/delete/product/{id}
+   controller: App\Controller\ProductController::destroy
+
+getProduct:
+   path: /api/get/product/{id}
+   controller: App\Controller\ProductController::getProduct
+
+getProducts:
+   path: /api/get/products
+   controller: App\Controller\ProductController::getProducts
+
+getProductsByCategory:
+   path: /api/category/products/{id}
+   controller: App\Controller\ProductController::getProductsByCategory
+
+getProductsByUser:
+   path: /api/user/products/{id}
+   controller: App\Controller\ProductController::getProductsByUser
+
+uploadProduct:
+   path: /api/upload/product
+   controller: App\Controller\ProductController::upload
+
+getImageProduct:
+   path: /api/image/product/{file}
+   controller: App\Controller\ProductController::getImages
+
+searchProduct:
+   path: /api/search/product/{letter}
+   controller: App\Controller\ProductController::searchProduct
+
+
+# Rutas del controlador product.
+
+subscribe:
+   path: /api/subscribe
+   controller: App\Controller\SuscriberController::subscribe
+  
+getSubscribe:
+   path: /api/get/subscribe
+   controller: App\Controller\SuscriberController::getUserSubscribe
