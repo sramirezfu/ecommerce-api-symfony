@@ -87,9 +87,23 @@ class User
     /**
      * @var string|null
      *
-     * @ORM\Column(name="remember_token", type="string", length=255, nullable=true)
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
      */
-    private $rememberToken;
+    private $address;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="phone", type="string", length=50, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="district", type="string", length=100, nullable=true)
+     */
+    private $district;
 
     public function getId(): ?int
     {
@@ -204,14 +218,38 @@ class User
         return $this;
     }
 
-    public function getRememberToken(): ?string
+    public function getAddress(): ?string
     {
-        return $this->rememberToken;
+        return $this->address;
     }
 
-    public function setRememberToken(?string $rememberToken): self
+    public function setAddress(?string $address): self
     {
-        $this->rememberToken = $rememberToken;
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getDistrict(): ?string
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(?string $district): self
+    {
+        $this->district = $district;
 
         return $this;
     }

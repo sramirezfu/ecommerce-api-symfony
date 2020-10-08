@@ -55,6 +55,9 @@ class UserController extends AbstractController
             $role = !empty($params->role) ? $params->role : null;
             $email = !empty($params->email) ? $params->email : null;
             $password = !empty($params->password) ? $params->password : null;
+            $address = !empty($params->address) ? $params->address : null;
+            $phone = !empty($params->phone) ? $params->phone : null;
+            $district = !empty($params->district) ? $params->district : null;
 
             $validate = Validation::createValidator();
             $validate_email = $validate->validate($email, [
@@ -72,6 +75,10 @@ class UserController extends AbstractController
                 $user->setPassword($pwh);
                 $user->setCreatedAt(new \Datetime('now'));
                 $user->setUpdateAt(new \Datetime('now'));
+                $user->setAddress($address);
+                $user->setPhone($phone);
+                $user->setDistrict($district);
+
                 $doctrine = $this->getDoctrine();
                 $em = $doctrine->getManager();
                 $is_exist = $doctrine->getRepository(User::class)->findOneBy(array(
@@ -152,7 +159,18 @@ class UserController extends AbstractController
             $email = !empty($params->email) ? $params->email : null;
             $description = !empty($params->description) ? $params->description : null;
             $images = !empty($params->image) ? $params->image : null;
-            $image = date("d-m-Y").$images;           
+            $address = !empty($params->address) ? $params->address : null;
+            $phone = !empty($params->phone) ? $params->phone : null;
+            $district = !empty($params->district) ? $params->district : null;
+
+            $is_exist_img = $this->getDoctrine()->getRepository(User::class)->findOneBy([
+                'image' => $images
+            ]);
+            if(is_object($is_exist_img)){
+                $image = $images;
+            }else{
+                $image = date("d-m-Y").$images;
+            }                     
             
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
@@ -173,6 +191,10 @@ class UserController extends AbstractController
                 $user->setDescription($description);
                 $user->setImage($image);
                 $user->setUpdateAt(new \Datetime('now'));
+                $user->setAddress($address);
+                $user->setPhone($phone);
+                $user->setDistrict($district);
+                
                 $is_exist = $doctrine->getRepository(User::class)->findBy(array(
                     'email' => $email
                 ));
